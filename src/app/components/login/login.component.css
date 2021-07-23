@@ -1,0 +1,32 @@
+    .card {
+        height: 390px;
+        width: 450px;
+        background-color: rgba(0, 0, 0, 0.2);
+        box-shadow: 2px 2px 5px #999;
+    }
+    
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    .a {
+        color: black;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    
+    .titulo {
+        color: white;
+        text-align: center;
+        font-weight: 100;
+        font: italic bold 80px Georgia, Serif;
+        text-shadow: -5px 1px 0 whitesmoke, -12px 3px 0 #0a0e27;
+        letter-spacing: 0.05em;
+    }
+    
+    hr {
+        background-color: black;
+    }

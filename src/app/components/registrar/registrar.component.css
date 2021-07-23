@@ -1,0 +1,30 @@
+.card {
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 5px #999;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.titulo {
+    color: black;
+    text-align: center;
+    font-weight: 100;
+    font: italic bold 33px Georgia, Serif;
+    text-shadow: -5px 1px 0 whitesmoke;
+    letter-spacing: 0.05em;
+}
+
+.a {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+hr {
+    background-color: black;
+}

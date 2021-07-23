@@ -1,0 +1,73 @@
+<div>
+    <button style="float:right" (click)="logOut()"> <i class="fas fa-sign-in-alt"></i> </button>
+    <h1 class="letra m-5 text-center">
+        NotasApp
+    </h1>
+
+</div>
+<hr style="background-color: blue;">
+
+
+<div class="header d-flex justify-content-between">
+    <button class="btn btn-primary" routerLink="/agregar">
+            <i class="fa fa-plus"> </i> 
+            Agregar Notas
+    </button>
+
+    <div style="float: right;">
+        <form [formGroup]="buscarFecha">
+
+            <input [(ngModel)]='fecha' class="btn btn-outline-primary" type="date" style="width: 180px; height: 40px;" formControlName="update_date">
+
+            <button class="btn btn-outline-success  ml-2" *ngIf="fecha" (click)="SearchByDateNote(fecha)">Buscar</button>
+        </form>
+
+    </div>
+</div>
+
+<div class="card mt-3" *ngFor="let not of notas; let i = index">
+    <div class="card-body animate__animated animate__backInLeft" style="background-color: cornsilk;">
+
+        <h3 class="text-center">{{not.titulo}}</h3>
+        <h3>{{not.creation_date | date:'medium'}}</h3>
+        <hr>
+        <p>{{not.content}}
+            <button type="submit" class="boton btn btn-danger">
+                <i class="fa fa-trash" (click)="borrarNota(not)"></i>    
+            </button>
+            <button type="submit " class="boton btn btn-primary">
+                <i class="fa fa-pencil" (click)="obtenerDatos(not)" ></i>
+            </button>
+        </p>
+    </div>
+</div>
+
+<div *ngIf="notas.length === 0" class="alert alert-warning text-center mt-3 ">
+    <h4 class="alert-heading ">No hay Notas </h4>
+    <i class="fa fa-exclamation fa-2x "></i>
+</div>
+
+<!-- <div class="row" *ngFor="let nota of notas">
+    <div class=" col ">
+        <ul class=" list-group mt-4 ">
+            <li class="list-group-item mt-2 " style="background-color: floralwhite; ">
+                <h3 class="text-center m-2 ">
+                    <div style="cursor: pointer; ">
+                        <p>{{nota.creation_Date | date:'medium'}}</p>
+                        <p>{{nota.titulo}}</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <p>{{nota.content}}</p>
+                    </div>
+                    <button type="submit " class="boton btn btn-danger ">
+                        <i class="fa fa-trash "></i>    
+                    </button>
+                    <button type="submit " class="boton btn btn-primary ">
+                        <i class="fa fa-pencil "></i>
+                    </button>
+                </h3>
+            </li>
+        </ul>
+    </div>
+</div> -->

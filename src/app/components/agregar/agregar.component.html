@@ -1,0 +1,89 @@
+<!-- <div class="container animate__animated animate__fadeIn">
+    <h1 class="text-center"> Agregar Descripcion </h1>
+    <hr>
+
+
+    <div class="row">
+        <div class="col mt-4">
+
+            <h3 class="text-center mb-3">
+                {{Notas.titulo}}
+            </h3>
+
+            <div (keyup.enter)="agregarCons()">
+                <input type="text" class="form-control" maxlength="300" style="background-color: floralwhite;" [(ngModel)]="nombreDesc">
+
+            </div>
+
+        </div>
+        <div class=" mt-4">
+            <button class="btn btn-danger" routerLink="home"> 
+            <i class="fa fa-angle-left"></i>
+            Volver
+        </button>
+            <button class="btn btn-primary m-1" (click)="agregarCons()">
+            <i class="fa fa-save"></i>
+            Guardar
+        </button>
+        </div>
+
+
+        <hr class="mt-3">
+        <div>
+
+        </div>
+        <h1 class="mb-3" *ngIf="Notas.descripcion.length >0">Cosas por hacer</h1>
+
+        <ul class="form-control" style="background-color: floralwhite;" *ngFor="let item of Notas.descripcion; let i = index">
+            <li class="animate__animated animate__fadeInDown" style="list-style: none;">
+                {{item.descripcion}}
+
+                <button type="submit " class="boton btn btn-danger" (click)="borrar(i)">
+                <i class="fa fa-trash "></i>    
+            </button>
+
+            </li>
+        </ul>
+
+
+
+
+    </div>
+</div> -->
+
+<div class="container animate__animated animate__backInUp">
+    <div class="col-md-12">
+        <div class="titulo text-center m-4">
+            <h1 class="letra">Agregar Notas</h1>
+        </div>
+        <hr>
+        <div>
+            <form [formGroup]="registrar">
+                <div class=" form-group mb-4 " style="text-align: start; ">
+                    <h2 class="text-center letra ">Titulo</h2>
+                    <input type="text " class="form-control " placeholder="Titulo de la nota " formControlName="titulo">
+                </div>
+
+                <div class="form-group ">
+                    <h2 class="text-center letra ">Descripcion</h2>
+                    <div class="input-group ">
+                        <textarea class="form-control" rows="8 " placeholder="Ingrese la descripcion... " formControlName="content"></textarea>
+                    </div>
+                </div>
+
+                <div class="mt-3 mb-3 d-flex justify-content-between ">
+                    <button type="submit " class="btn btn-danger" (click)="CrearNota()"> 
+                    <i class="fa fa-save " ></i>
+                    Aceptar
+                    </button>
+                    <button type="submit " class="btn btn-secondary">
+                    <i class="fas fa-pen " (click)="actualizarNota()"></i>    
+                    Editar</button>
+                    <button class="btn btn-primary " routerLink="/home ">
+                    <i class="fa fa-angle-left "></i>
+                    Volver</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

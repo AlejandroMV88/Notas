@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row" style="width: 100%;">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card text-center" style="padding: 20px;">
+                <h3 class="titulo">Registrar Usuario</h3>
+                <app-loading *ngIf="loading"></app-loading>
+                <form style="padding-top:10px ;" [formGroup]="registrar">
+                    <hr>
+
+                    <div class="form-group mb-3">
+                        <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" formControlName="nombre">
+                        <span class="text-danger" *ngIf="registrar.get('nombre').hasError('required') && registrar.get('nombre').touched">
+                            El nombre es <strong>Requerido</strong>
+                        </span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" aria-describedby="basic-addon1" formControlName="apellido">
+                        <span class="text-danger" *ngIf="registrar.get('apellido').hasError('required') && registrar.get('apellido').touched">
+                            El apellido es <strong>Requerido</strong>
+                        </span>
+                    </div>
+
+                    <div class="form-group mb-3">
+
+                        <input type="text" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1" formControlName="usuario">
+                        <span class="text-danger" *ngIf="registrar.get('usuario').hasError('required') && registrar.get('usuario').touched">
+                            El usuario es <strong>Requerido</strong>
+                        </span>
+                    </div>
+
+                    <div class="form-group mb-3">
+
+                        <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" formControlName="password">
+                        <span class="text-danger mb-3" *ngIf="registrar.get('password').hasError('required') && registrar.get('password').touched">
+                            la contraseña es <strong>Requerida</strong>
+                        </span>
+                    </div>
+
+                    <!-- <div class="input-group mb-3 " style="text-align: start; ">
+                        <span class="input-group-text "><i class="fas fa-key "></i></span>
+                        <input type="password " class="form-control " placeholder="Repetir Password " aria-label="Password " aria-describedby="basic-addon1 " formControlName="confirmPassword ">
+                        <span class="text-danger " *ngIf="registrar.hasError( 'notSame') ">
+                            Contraseñas <strong>Distintas</strong>
+                        </span>
+                    </div> -->
+
+                    <div class="form-group d-flex justify-content-evenly">
+                        <button class="btn btn-primary btn-login" type="submit" (click)="registrarUsuario()" [disabled]="registrar.invalid">Aceptar</button>
+
+                        <button class="btn btn-secondary mr-3 btn-login" routerLink="/login">Volver</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
